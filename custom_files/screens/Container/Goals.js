@@ -15,7 +15,7 @@ const GOALS = [
   },
 ];
 
-const Item = ({goal, amount}) => (
+const MyGoal = ({goal, amount}) => (
   <View style={styles.item}>
     <View style={styles.content}>
       <View style={styles.goalAmount}>
@@ -33,12 +33,14 @@ const Item = ({goal, amount}) => (
 );
 
 const Goals = () => {
-  const renderItem = ({item}) => <Item goal={item.goal} amount={item.amount} />;
+  const renderGoals = ({item}) => (
+    <MyGoal goal={item.goal} amount={item.amount} />
+  );
 
   return (
     <FlatList
       data={GOALS}
-      renderItem={renderItem}
+      renderItem={renderGoals}
       keyExtractor={item => item.id}
     />
   );

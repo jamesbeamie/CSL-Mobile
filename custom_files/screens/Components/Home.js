@@ -16,6 +16,23 @@ const Home = () => {
 
   const onToggleSnackBar = () => setVisible(true);
 
+  const renderTopInfo = () => (
+    <View style={styles.dashboard}>
+      <Text style={styles.userName}>Afternoon, Jo</Text>
+      <Text style={styles.msg}>Here's the latest</Text>
+      <Text style={styles.balance}>KES 42,000</Text>
+      <Text style={styles.funds}>Total Funds</Text>
+    </View>
+  );
+
+  const renderGoals = () => (
+    <View style={styles.goalsContainer}>
+      <Text style={styles.goalsTitle}>Your Goals</Text>
+      <Goals />
+      <MainBtn title={'Show Snackbar'} onPress={onToggleSnackBar} />
+    </View>
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       {visible && (
@@ -30,17 +47,8 @@ const Home = () => {
           }}
         />
       )}
-      <View style={styles.dashboard}>
-        <Text style={styles.userName}>Afternoon, Jo</Text>
-        <Text style={styles.msg}>Here's the latest</Text>
-        <Text style={styles.balance}>KES 42,000</Text>
-        <Text style={styles.funds}>Total Funds</Text>
-      </View>
-      <View style={styles.goalsContainer}>
-        <Text style={styles.goalsTitle}>Your Goals</Text>
-        <Goals />
-        <MainBtn title={'Show Snackbar'} onPress={onToggleSnackBar} />
-      </View>
+      {renderTopInfo()}
+      {renderGoals()}
     </SafeAreaView>
   );
 };
