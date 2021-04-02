@@ -1,5 +1,12 @@
-import React from 'react';
-import {Text, View, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  Animated,
+} from 'react-native';
 
 import {icons} from '../../constants';
 const SnackBar = ({
@@ -9,29 +16,26 @@ const SnackBar = ({
   closeIconStyle,
   onPress,
   onClose,
+  bounceValue,
 }) => {
   return (
-    <View style={[styles.container, containerStyle]}>
+    <Animated.View
+      style={[styles.container, {transform: [{translateY: bounceValue}]}]}>
       <TouchableOpacity style={styles.content} onPress={onPress}>
         <Text style={[styles.text, textStyle]}>{text}</Text>
         <TouchableOpacity
           style={[styles.close, closeIconStyle]}
           onPress={onClose}>
-          <Image
-            source={icons.cross}
-            resizeMode="contain"
-            style={styles.icon}
-          />
+          <Text style={styles.icon}>X</Text>
         </TouchableOpacity>
       </TouchableOpacity>
-    </View>
+    </Animated.View>
   );
 };
 const styles = StyleSheet.create({
   container: {
     top: '5%',
     backgroundColor: '#EC3A68',
-    minHeight: 100,
     height: 'auto',
     position: 'absolute',
     zIndex: 100,
@@ -39,17 +43,24 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     borderRadius: 15,
     padding: 20,
+    position: 'absolute',
   },
   content: {flexDirection: 'row', justifyContent: 'space-between'},
-  text: {color: 'white', fontSize: 18, width: '80%'},
+  text: {
+    color: 'white',
+    fontSize: 18,
+    width: '80%',
+    fontFamily: 'RobotoCondensed-Light',
+  },
   close: {
     marginTop: 'auto',
     marginBottom: 'auto',
     width: '10%',
   },
   icon: {
-    width: 25,
-    height: 25,
+    fontSize: 25,
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
 
