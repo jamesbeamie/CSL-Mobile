@@ -1,14 +1,6 @@
 import React, {useState} from 'react';
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-  Animated,
-} from 'react-native';
+import {Text, TouchableOpacity, StyleSheet, Animated} from 'react-native';
 
-import {icons} from '../../constants';
 const SnackBar = ({
   text,
   containerStyle,

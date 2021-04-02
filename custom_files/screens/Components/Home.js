@@ -1,13 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {
-  Text,
-  StyleSheet,
-  View,
-  ScrollView,
-  SafeAreaView,
-  Animated,
-  Dimensions,
-} from 'react-native';
+import {Text, StyleSheet, View, SafeAreaView, Animated} from 'react-native';
 import MainBtn from '../../common/buttons/MainBtn';
 import SnackBar from '../../common/snackbar/SnackBar';
 import Goals from '../Container/Goals';
@@ -16,7 +8,6 @@ const Home = () => {
   const [visible, setVisible] = useState(false);
   const [text, setText] = useState('');
   const [bounceValue, setBounceValue] = useState();
-  const [bounceTo, setBounceTo] = useState(-100);
 
   useEffect(() => {
     setText(
@@ -25,7 +16,7 @@ const Home = () => {
     setBounceValue(new Animated.Value(-200));
   }, []);
 
-  var toValue = 100;
+  let toValue = 110;
 
   if (!visible) {
     toValue = 0;
@@ -33,7 +24,6 @@ const Home = () => {
 
   const onToggleSnackBar = () => {
     setVisible(true);
-    // if (!visible) {
     Animated.spring(bounceValue, {
       toValue: toValue,
       velocity: 3,
@@ -41,19 +31,10 @@ const Home = () => {
       friction: 8,
       useNativeDriver: true,
     }).start();
-
-    // setVisible(!visible)
-    // setBounceValue(new Animated.Value(200));
+    setTimeout(closeSnackBar, 9000);
   };
 
   const closeSnackBar = () => (
-    // Animated.spring(200, {
-    //   toValue: -200,
-    //   velocity: 3,
-    //   tension: 2,
-    //   friction: 8,
-    //   useNativeDriver: true,
-    // }).start(),
     setBounceValue(new Animated.Value(-200)),
     setText(
       'This is an app notification snackbar to show the user when they perform an action.Clicking it should change the text.',
@@ -71,11 +52,11 @@ const Home = () => {
   );
 
   const renderGoals = () => (
-    <ScrollView style={styles.goalsContainer}>
+    <View style={styles.goalsContainer}>
       <Text style={styles.goalsTitle}>Your Goals</Text>
       <Goals />
       <MainBtn title={'Show Snackbar'} onPress={onToggleSnackBar} />
-    </ScrollView>
+    </View>
   );
 
   return (
