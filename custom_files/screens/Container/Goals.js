@@ -22,7 +22,7 @@ const MyGoal = ({goal, amount}) => (
       <Text style={styles.amount}>{amount}</Text>
     </View>
     <View style={styles.finishBtn}>
-      <Text style={{color: 'white', fontFamily: 'RobotoCondensed-Regular'}}>
+      <Text style={{color: 'white', fontFamily: 'RobotoCondensed-Light'}}>
         Finish Goal
       </Text>
     </View>
@@ -72,13 +72,13 @@ const styles = StyleSheet.create({
   goal: {
     fontSize: 18,
     fontWeight: '600',
-    fontFamily: 'RobotoCondensed-Regular',
+    fontFamily: 'RobotoCondensed-Light',
   },
   goalAmount: {flexDirection: 'column', padding: 20},
   amount: {
     fontSize: 18,
     fontWeight: '300',
-    fontFamily: 'RobotoCondensed-Regular',
+    fontFamily: 'RobotoCondensed-Light',
   },
   finishBtn: {
     backgroundColor: '#58D68D',
