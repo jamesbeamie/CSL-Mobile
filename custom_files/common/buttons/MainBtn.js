@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     marginBottom: 13,
-    marginTop: 222,
+    top: '90%',
     shadowColor: '#000',
     shadowOffset: {
       width: 2,
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 50,
     textAlign: 'center',
+    fontFamily: 'RobotoCondensed-Light',
   },
 });
 

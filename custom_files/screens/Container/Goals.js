@@ -17,14 +17,14 @@ const GOALS = [
 
 const MyGoal = ({goal, amount}) => (
   <View style={styles.item}>
-    <View style={styles.content}>
-      <View style={styles.goalAmount}>
-        <Text style={styles.goal}>{goal}</Text>
-        <Text style={styles.amount}>{amount}</Text>
-      </View>
-      <View style={styles.finishBtn}>
-        <Text style={{color: 'white'}}>Finish Goal</Text>
-      </View>
+    <View style={styles.goalAmount}>
+      <Text style={styles.goal}>{goal}</Text>
+      <Text style={styles.amount}>{amount}</Text>
+    </View>
+    <View style={styles.finishBtn}>
+      <Text style={{color: 'white', fontFamily: 'RobotoCondensed-Light'}}>
+        Finish Goal
+      </Text>
     </View>
     <View style={styles.toggleBtn}>
       <Image source={icons.right} resizeMode="contain" style={styles.icon} />
@@ -72,11 +72,13 @@ const styles = StyleSheet.create({
   goal: {
     fontSize: 18,
     fontWeight: '600',
+    fontFamily: 'RobotoCondensed-Light',
   },
   goalAmount: {flexDirection: 'column', padding: 20},
   amount: {
     fontSize: 18,
     fontWeight: '300',
+    fontFamily: 'RobotoCondensed-Light',
   },
   finishBtn: {
     backgroundColor: '#58D68D',
