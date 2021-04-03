@@ -26,8 +26,8 @@ const SnackBar = ({
 };
 const styles = StyleSheet.create({
   container: {
-    top: '5%',
-    backgroundColor: '#EC3A68',
+    top: '10%',
+    backgroundColor: '#ff0080',
     height: 'auto',
     position: 'absolute',
     zIndex: 100,
