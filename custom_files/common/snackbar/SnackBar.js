@@ -26,7 +26,7 @@ const SnackBar = ({
 };
 const styles = StyleSheet.create({
   container: {
-    top: '10%',
+    top: Platform.OS === 'ios' ? '5%' : '3%',
     backgroundColor: '#ff0080',
     height: 'auto',
     position: 'absolute',

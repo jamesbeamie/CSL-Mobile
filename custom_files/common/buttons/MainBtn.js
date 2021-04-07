@@ -15,8 +15,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     marginBottom: 13,
-    top: '90%',
-    zIndex: 100,
+    marginTop: Platform.OS === 'ios' ? '80%' : '60%',
     shadowColor: '#000',
     shadowOffset: {
       width: 2,
