@@ -3,7 +3,10 @@ import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 const MainBtn = ({title, style, onPress}) => {
   return (
-    <TouchableOpacity style={[styles.container, style]} onPress={onPress}>
+    <TouchableOpacity
+      style={[styles.container, style]}
+      onPress={onPress}
+      hitSlop={{top: 50, bottom: 50, left: 30, right: 30}}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );

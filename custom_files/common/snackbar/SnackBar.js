@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     borderRadius: 15,
     padding: 20,
-    position: 'absolute',
   },
   content: {flexDirection: 'row', justifyContent: 'space-between'},
   text: {
